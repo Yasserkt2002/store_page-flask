@@ -1,5 +1,7 @@
+// ignore_for_file: prefer_const_constructors, unused_import
+
 import 'package:flutter/material.dart';
-import 'package:stores/Item_template/product.dart';
+import 'package:stores/Item_template/Product_Card.dart';
 import 'package:stores/Models/product_model.dart';
 
 int? x;
@@ -43,7 +45,9 @@ class StorePage extends StatelessWidget {
             ),
             itemCount: ProductsList.length,
             itemBuilder: (context, Index) {
-              return ProductsList[Index];
+              return Product(
+                productmodel: ProductsList[Index],
+              );
             },
           ),
         ),

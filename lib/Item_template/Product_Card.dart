@@ -1,10 +1,12 @@
+// ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, sized_box_for_whitespace, non_constant_identifier_names, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:stores/Models/product_model.dart';
 
 Color? colorFav = Colors.grey;
 
 class Product extends StatefulWidget {
-  const Product({Key? key,required this.productmodel});
+  const Product({Key? key, required this.productmodel});
   final Productmodel? productmodel;
 
   @override
@@ -14,6 +16,11 @@ class Product extends StatefulWidget {
 class _ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
+    final ProductCardHightSize = MediaQuery.of(context).size.height * 0.3;
+    final ProductCardWidthSize = MediaQuery.of(context).size.width * 0.49;
+    final PhotoProductHightSize = MediaQuery.of(context).size.height * 0.155;
+    final PhotoProductWidthSize = MediaQuery.of(context).size.height * 0.18;
+
     return Stack(
       children: [
         Padding(
@@ -21,8 +28,8 @@ class _ProductState extends State<Product> {
           child: Container(
             //color: const Color.fromARGB(255, 122, 63, 63),
             padding: EdgeInsets.fromLTRB(5, 40, 5, 0),
-            height: 190,
-            width: 200,
+            height: ProductCardHightSize,
+            width: ProductCardWidthSize,
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
@@ -52,8 +59,8 @@ class _ProductState extends State<Product> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            'name',
-                            //  productmodel!.Description!,
+                            //'name',
+                            widget.productmodel!.Description,
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.grey,
@@ -64,10 +71,9 @@ class _ProductState extends State<Product> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                '\'Price\'',
-                                //  productmodel!.Price.toString()!,
+                                // '\'Price\'',
+                                widget.productmodel!.Price.toString(),
 
-                                //   '$productmodel.Price',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 21,
@@ -101,10 +107,12 @@ class _ProductState extends State<Product> {
           bottom: 89,
           left: 29,
           child: Container(
+            //color: Colors.red,
             padding: EdgeInsets.only(left: 21),
-            height: 100,
+            height: PhotoProductHightSize,
+            width: PhotoProductWidthSize,
             child:
-                Image.asset(widget.productmodel!.Image! /* 'Images/ggg.png'*/),
+                Image.asset(widget.productmodel!.Image /* 'Images/ggg.png'*/),
           ),
         ),
       ],
@@ -112,86 +120,68 @@ class _ProductState extends State<Product> {
   }
 }
 
-List<Product> ProductsList = [
-  Product(
-    productmodel: Productmodel(
-      id: 1,
-      Price: 150,
-      title: 'banana',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+List<Productmodel> ProductsList = [
+  Productmodel(
+    id: 1,
+    Price: 150,
+    title: 'banana',
+    Description: 'plaplapla',
+    Image: 'Images/aaa.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 2,
-      Price: 225,
-      title: 'onion',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 2,
+    Price: 225,
+    title: 'onion',
+    Description: 'plaplapla',
+    Image: 'Images/bbb.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 3,
-      Price: 110,
-      title: 'juice',
-      Description: 'plaplapla',
-      Image: 'Images/fff.png',
-    ),
+  Productmodel(
+    id: 3,
+    Price: 110,
+    title: 'juice',
+    Description: 'plaplapla',
+    Image: 'Images/ccc.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 5,
-      Price: 40,
-      title: 'lemon',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 5,
+    Price: 40,
+    title: 'lemon',
+    Description: 'plaplapla',
+    Image: 'Images/ddd.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 6,
-      Price: 650,
-      title: 'carrot',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 6,
+    Price: 650,
+    title: 'carrot',
+    Description: 'plaplapla',
+    Image: 'Images/eee.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 7,
-      Price: 500,
-      title: 'tomato',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 7,
+    Price: 500,
+    title: 'tomato',
+    Description: 'plaplapla',
+    Image: 'Images/fff.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 8,
-      Price: 125,
-      title: 'meal',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 8,
+    Price: 125,
+    title: 'meal',
+    Description: 'plate',
+    Image: 'Images/ggg.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 9,
-      Price: 120,
-      title: 'milk',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 9,
+    Price: 120,
+    title: 'milk',
+    Description: 'plaplapla',
+    Image: 'Images/hhh.png',
   ),
-  Product(
-    productmodel: Productmodel(
-      id: 10,
-      Price: 100,
-      title: 'meat',
-      Description: 'plaplapla',
-      Image: 'Images/ddd.png',
-    ),
+  Productmodel(
+    id: 10,
+    Price: 100,
+    title: 'meat',
+    Description: 'plaplapla',
+    Image: 'Images/ddd.png',
   ),
 ];

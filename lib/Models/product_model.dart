@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 class Productmodel {
   final int? id;
   final String title;
@@ -13,8 +15,5 @@ class Productmodel {
     required this.Image,
     //required this.rating, /////////////
   });
-
-  
 }
-
-
+  
