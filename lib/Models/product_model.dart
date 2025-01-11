@@ -2,18 +2,20 @@
 
 class Productmodel {
   final int? id;
-  final String title;
+  final String Name; 
   final double Price;
   final String Description;
   final String Image;
-  // RatingModel rating; ////////////////
-  const Productmodel({
+   var availableQuantity;
+   var QuantityAddedToCart;
+
+   Productmodel({
     this.id,
-    required this.title,
+    required this.Name,
     required this.Price,
     required this.Description,
     required this.Image,
-    //required this.rating, /////////////
+    required this.availableQuantity,
+      this.QuantityAddedToCart,
   });
 }
-  

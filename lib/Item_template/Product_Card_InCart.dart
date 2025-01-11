@@ -7,15 +7,15 @@ import 'package:stores/pages/store_page.dart';
 
 Color? colorFav = Colors.grey;
 
-class Product extends StatefulWidget {
-  const Product({Key? key, required this.productmodel});
+class Product_inCart extends StatefulWidget {
+  const Product_inCart({Key? key, required this.productmodel});
   final Productmodel? productmodel;
 
   @override
-  State<Product> createState() => _ProductState();
+  State<Product_inCart> createState() => _ProductState();
 }
 
-class _ProductState extends State<Product> {
+class _ProductState extends State<Product_inCart> {
   @override
   Widget build(BuildContext context) {
     final ProductCardHightSize = MediaQuery.of(context).size.height * 0.3;
@@ -89,19 +89,14 @@ class _ProductState extends State<Product> {
                                 IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      if (widget.productmodel!
-                                              .availableQuantity! >=
-                                          1) {
-                                        widget.productmodel!
-                                            .QuantityAddedToCart++;
-                                        widget
-                                            .productmodel!.availableQuantity--;
-                                        ListProducts_InCart.add(
-                                            widget.productmodel!);
-                                      }
+                                      widget
+                                          .productmodel!.QuantityAddedToCart--;
+                                      widget.productmodel!.availableQuantity++;
+                                      ListProducts_InCart.remove(
+                                          widget.productmodel!);
                                     });
-                                  },
-                                  icon: Icon(Icons.add_shopping_cart_outlined),
+                                  }, ///////////////////////////////////////
+                                  icon: Icon(Icons.remove_shopping_cart),
                                 ),
                                 IconButton(
                                     onPressed: () {
@@ -144,87 +139,3 @@ class _ProductState extends State<Product> {
     );
   }
 }
-
-List<Productmodel> ProductsList = [
-  Productmodel(
-    id: 1,
-    Price: 150,
-    Name: 'banana',
-    Description: 'plaplapla',
-    Image: 'Images/aaa.png',
-    availableQuantity: 5,
-    QuantityAddedToCart: 0,
-  ),
-  Productmodel(
-    id: 2,
-    Price: 225,
-    Name: 'onion',
-    Description: 'plaplapla',
-    availableQuantity: 5,
-    Image: 'Images/bbb.png',
-    QuantityAddedToCart: 0,
-  ),
-  Productmodel(
-    id: 3,
-    Price: 110,
-    Name: 'juice',
-    Description: 'plaplapla',
-    Image: 'Images/ccc.png',
-    availableQuantity: 5,
-    QuantityAddedToCart: 0,
-  ),
-  Productmodel(
-    id: 5,
-    Price: 40,
-    Name: 'lemon',
-    Description: 'plaplapla',
-    QuantityAddedToCart: 0,
-    Image: 'Images/ddd.png',
-    availableQuantity: 5,
-  ),
-  Productmodel(
-    id: 6,
-    Price: 650,
-    Name: 'carrot',
-    Description: 'plaplapla',
-    Image: 'Images/eee.png',
-    availableQuantity: 5,
-    QuantityAddedToCart: 0,
-  ),
-  Productmodel(
-    id: 7,
-    Price: 500,
-    Name: 'tomato',
-    Description: 'plaplapla',
-    QuantityAddedToCart: 0,
-    Image: 'Images/fff.png',
-    availableQuantity: 5,
-  ),
-  Productmodel(
-    id: 8,
-    Price: 125,
-    Name: 'meal',
-    Description: 'plate',
-    Image: 'Images/ggg.png',
-    QuantityAddedToCart: 0,
-    availableQuantity: 5,
-  ),
-  Productmodel(
-    id: 9,
-    Price: 120,
-    Name: 'milk',
-    Description: 'plaplapla',
-    Image: 'Images/hhh.png',
-    availableQuantity: 5,
-    QuantityAddedToCart: 0,
-  ),
-  Productmodel(
-    id: 10,
-    Price: 100,
-    Name: 'meat',
-    Description: 'plaplapla',
-    Image: 'Images/ddd.png',
-    QuantityAddedToCart: 0,
-    availableQuantity: 5,
-  ),
-];
