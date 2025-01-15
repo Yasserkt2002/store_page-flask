@@ -2,20 +2,21 @@
 
 import 'package:flutter/material.dart';
 import 'package:stores/Item_template/Product_Card.dart';
+import 'package:stores/Item_template/Product_Card_InCart.dart';
+import 'package:stores/Item_template/Product_Card_InFavorite.dart';
 import 'package:stores/Item_template/Stroe_Card.dart';
 import 'package:stores/Models/product_model.dart';
-import 'package:stores/pages/cart_page.dart';
 import 'package:stores/pages/home_page.dart';
 
 int? x;
 
-class StorePage extends StatelessWidget {
-  StorePage({
+class favorite_page extends StatelessWidget {
+  favorite_page({
     super.key,
-    required this.ListProducts,
+    required this.ListProducts_InFavorite,
     /* required this.ListProducts*/
   });
-  List<Productmodel> ListProducts;
+  List<Productmodel> ListProducts_InFavorite;
   //List<Productmodel> ListProducts;
   @override
   Widget build(BuildContext context) {
@@ -28,24 +29,13 @@ class StorePage extends StatelessWidget {
 
         backgroundColor: Colors.white,
         title: Text(
-          'Our Products',
+          'My Favorite',
           // or Name store
           style: TextStyle(
             color: Colors.black,
             fontSize: 22,
           ),
         ),
-
-        actions: [
-          IconButton(onPressed: () {
-
-              Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return cart_page(ListProducts_InCart: ListProducts_InCart) ;/////////////
-            }, 
-          ));
-          }, icon: Icon(Icons.shopping_cart_sharp))
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(5, 20, 5, 0),
@@ -57,10 +47,10 @@ class StorePage extends StatelessWidget {
             crossAxisSpacing: 1,
             mainAxisSpacing: 6,
           ),
-          itemCount: List1.length,
+          itemCount: ListProducts_InFavorite.length,
           itemBuilder: (context, Index) {
-            return Product(
-              productmodel: ListProducts[Index],
+            return Product_inFavorite(
+              productmodel: ListProducts_InFavorite[Index],
             );
           },
         ),
@@ -69,8 +59,4 @@ class StorePage extends StatelessWidget {
   }
 }
 
-List<Productmodel>ListProducts_InCart=[
-
-
-  
-];
+List<Productmodel> ListProducts_InFavorite = [];

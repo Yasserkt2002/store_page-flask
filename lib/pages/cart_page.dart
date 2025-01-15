@@ -11,6 +11,7 @@ int? x;
 
 class cart_page extends StatelessWidget {
   cart_page({
+    
     super.key,
     required this.ListProducts_InCart,
     /* required this.ListProducts*/
@@ -25,7 +26,7 @@ class cart_page extends StatelessWidget {
         shadowColor: Colors.grey,
         centerTitle:
             true, //or             padding: const EdgeInsets.only(left: 95),
-
+  
         backgroundColor: Colors.white,
         title: Text(
           'My Cart',

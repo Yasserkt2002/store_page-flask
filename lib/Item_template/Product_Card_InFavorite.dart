@@ -1,22 +1,24 @@
-// ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, sized_box_for_whitespace, non_constant_identifier_names, use_key_in_widget_constructors, dead_code
+// ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, sized_box_for_whitespace, non_constant_identifier_names, use_key_in_widget_constructors, dead_code, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:stores/Item_template/Product_Card.dart';
 import 'package:stores/Models/product_model.dart';
 import 'package:stores/details_product/screens/details_screen.dart';
 import 'package:stores/pages/cart_page.dart';
+import 'package:stores/pages/favorite_page.dart';
 import 'package:stores/pages/store_page.dart';
 
-Color? colorFav = Colors.grey;
+Color? colorFav = Colors.red;
 
-class Product_inCart extends StatefulWidget {
-  const Product_inCart({Key? key, required this.productmodel});
+class Product_inFavorite extends StatefulWidget {
+  const Product_inFavorite({Key? key, required this.productmodel});
   final Productmodel? productmodel;
 
   @override
-  State<Product_inCart> createState() => _ProductState();
+  State<Product_inFavorite> createState() => _ProductState();
 }
 
-class _ProductState extends State<Product_inCart> {
+class _ProductState extends State<Product_inFavorite> {
   @override
   Widget build(BuildContext context) {
     final ProductCardHightSize = MediaQuery.of(context).size.height * 0.3;
@@ -87,7 +89,7 @@ class _ProductState extends State<Product_inCart> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                IconButton(
+                                /*  IconButton(
                                   onPressed: () {
                                     setState(() {
                                       widget
@@ -107,7 +109,28 @@ class _ProductState extends State<Product_inCart> {
                                     });
                                   }, ///////////////////////////////////////
                                   icon: Icon(Icons.remove_shopping_cart),
-                                ),
+                                ),*/
+                                IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        ListProducts_InFavorite.remove(
+                                            widget.productmodel!);
+                                        Navigator.pop(context); //update page{
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                          builder: (context) {
+                                            return favorite_page(
+                                                ListProducts_InFavorite:
+                                                    ListProducts_InFavorite);
+                                            /////////////
+                                          },
+                                        )); //update page}
+                                      });
+                                    },
+                                    icon: Icon(
+                                      Icons.favorite,
+                                      color: colorFav,
+                                    ))
                               ],
                             ),
                           ],

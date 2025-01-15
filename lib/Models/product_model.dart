@@ -8,6 +8,7 @@ class Productmodel {
   final String Image;
    var availableQuantity;
    var QuantityAddedToCart;
+   bool IsFavorite;
 
    Productmodel({
     this.id,
@@ -17,5 +18,6 @@ class Productmodel {
     required this.Image,
     required this.availableQuantity,
       this.QuantityAddedToCart,
+      required this.IsFavorite,
   });
 }

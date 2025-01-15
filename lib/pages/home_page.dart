@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:stores/Item_template/Stroe_Card.dart';
 import 'package:stores/Models/product_model.dart';
 import 'package:stores/Models/stroe_model.dart';
+import 'package:stores/pages/favorite_page.dart';
 import 'package:stores/pages/store_page.dart';
 
 class home_page extends StatelessWidget {
@@ -15,9 +16,19 @@ class home_page extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return favorite_page(
+                      ListProducts_InFavorite: ListProducts_InFavorite,
+                    );
+                  },
+                ));
+
+                //favorite_page
+              },
               icon: Icon(
-                Icons.search,
+                Icons.favorite_border,
                 size: 28,
               ))
         ],
@@ -105,6 +116,7 @@ List<Productmodel> List1 = [
   Productmodel(
     id: 1,
     Price: 200,
+    IsFavorite: false,
     Name: 'banana',
     Description: 'plaplapla1',
     Image: 'Images/aaa.png',
@@ -117,6 +129,7 @@ List<Productmodel> List1 = [
     Name: 'onion',
     Description: 'plaplapla2',
     Image: 'Images/bbb.png',
+    IsFavorite: false,
     availableQuantity: 5,
     QuantityAddedToCart: 0,
   ),
@@ -127,6 +140,7 @@ List<Productmodel> List1 = [
     Description: 'plaplapla3',
     Image: 'Images/ccc.png',
     availableQuantity: 5,
+    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -135,6 +149,7 @@ List<Productmodel> List1 = [
     Name: 'lemon',
     Description: 'plaplapla4',
     Image: 'Images/ddd.png',
+    IsFavorite: false,
     availableQuantity: 5,
     QuantityAddedToCart: 0,
   ),
@@ -142,6 +157,7 @@ List<Productmodel> List1 = [
     id: 6,
     Price: 300,
     Name: 'carrot',
+    IsFavorite: false,
     Description: 'plaplapla5',
     Image: 'Images/eee.png',
     QuantityAddedToCart: 0,
@@ -151,6 +167,7 @@ List<Productmodel> List1 = [
     id: 7,
     Price: 325,
     Name: 'tomato',
+    IsFavorite: false,
     Description: 'plaplapla6',
     Image: 'Images/fff.png',
     availableQuantity: 5,
@@ -162,6 +179,7 @@ List<Productmodel> List1 = [
     Name: 'meal',
     Description: 'plate',
     Image: 'Images/ggg.png',
+    IsFavorite: false,
     availableQuantity: 5,
     QuantityAddedToCart: 0,
   ),
@@ -173,6 +191,7 @@ List<Productmodel> List1 = [
     QuantityAddedToCart: 0,
     Image: 'Images/hhh.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 10,
@@ -181,6 +200,7 @@ List<Productmodel> List1 = [
     Name: 'meat',
     Description: 'plaplapla',
     Image: 'Images/ddd.png',
+    IsFavorite: false,
     availableQuantity: 5,
   ),
 ];
@@ -194,6 +214,7 @@ List<Productmodel> List2 = [
     Name: 'banana',
     Description: 'plaplapla',
     Image: 'Images/hhh.png',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
     availableQuantity: 5,
   ),
@@ -203,6 +224,7 @@ List<Productmodel> List2 = [
     Name: 'onion',
     QuantityAddedToCart: 0,
     Description: 'plaplapla',
+    IsFavorite: false,
     Image: 'Images/ggg.png',
     availableQuantity: 5,
   ),
@@ -214,6 +236,7 @@ List<Productmodel> List2 = [
     QuantityAddedToCart: 0,
     Image: 'Images/fff.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 5,
@@ -223,6 +246,7 @@ List<Productmodel> List2 = [
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 6,
@@ -232,6 +256,7 @@ List<Productmodel> List2 = [
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 7,
@@ -240,6 +265,7 @@ List<Productmodel> List2 = [
     Description: 'plaplapla',
     Image: 'Images/ccc.png',
     availableQuantity: 5,
+    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -249,6 +275,7 @@ List<Productmodel> List2 = [
     Description: 'plate',
     Image: 'Images/bbb.png',
     availableQuantity: 5,
+    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -257,6 +284,7 @@ List<Productmodel> List2 = [
     Name: 'milk',
     Description: 'plaplapla',
     Image: 'Images/aaa.png',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
     availableQuantity: 5,
   ),
@@ -265,6 +293,7 @@ List<Productmodel> List2 = [
     Price: 100,
     Name: 'meat',
     Description: 'plaplapla',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
     Image: 'Images/eee.png',
     availableQuantity: 5,
@@ -275,6 +304,7 @@ List<Productmodel> List3 = [
   Productmodel(
     id: 1,
     Price: 150,
+    IsFavorite: false,
     Name: 'banana',
     Description: 'plaplapla',
     Image: 'Images/aaa.png',
@@ -285,6 +315,7 @@ List<Productmodel> List3 = [
     id: 2,
     Price: 225,
     Name: 'onion',
+    IsFavorite: false,
     Description: 'plaplapla',
     Image: 'Images/bbb.png',
     availableQuantity: 5,
@@ -295,6 +326,7 @@ List<Productmodel> List3 = [
     Price: 110,
     Name: 'juice',
     Description: 'plaplapla',
+    IsFavorite: false,
     Image: 'Images/ccc.png',
     availableQuantity: 5,
     QuantityAddedToCart: 0,
@@ -306,6 +338,7 @@ List<Productmodel> List3 = [
     Description: 'plaplapla',
     Image: 'Images/ddd.png',
     QuantityAddedToCart: 0,
+    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -315,6 +348,7 @@ List<Productmodel> List3 = [
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/eee.png',
+    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -324,6 +358,7 @@ List<Productmodel> List3 = [
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/fff.png',
+    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -333,6 +368,7 @@ List<Productmodel> List3 = [
     Description: 'plate',
     Image: 'Images/ggg.png',
     QuantityAddedToCart: 0,
+    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -343,6 +379,7 @@ List<Productmodel> List3 = [
     availableQuantity: 5,
     QuantityAddedToCart: 0,
     Image: 'Images/hhh.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 10,
@@ -352,6 +389,7 @@ List<Productmodel> List3 = [
     availableQuantity: 5,
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
+    IsFavorite: false,
   ),
 ];
 /////4444
@@ -362,6 +400,7 @@ List<Productmodel> List4 = [
     Name: 'banana',
     Description: 'plaplapla',
     availableQuantity: 5,
+    IsFavorite: false,
     Image: 'Images/aaa.png',
     QuantityAddedToCart: 0,
   ),
@@ -371,6 +410,7 @@ List<Productmodel> List4 = [
     Name: 'onion',
     Description: 'plaplapla',
     availableQuantity: 5,
+    IsFavorite: false,
     Image: 'Images/bbb.png',
     QuantityAddedToCart: 0,
   ),
@@ -381,6 +421,7 @@ List<Productmodel> List4 = [
     availableQuantity: 5,
     Description: 'plaplapla',
     Image: 'Images/ccc.png',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -391,6 +432,7 @@ List<Productmodel> List4 = [
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 6,
@@ -400,6 +442,7 @@ List<Productmodel> List4 = [
     availableQuantity: 5,
     Description: 'plaplapla',
     Image: 'Images/eee.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 7,
@@ -409,6 +452,7 @@ List<Productmodel> List4 = [
     QuantityAddedToCart: 0,
     Description: 'plaplapla',
     Image: 'Images/fff.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 8,
@@ -416,6 +460,7 @@ List<Productmodel> List4 = [
     availableQuantity: 5,
     QuantityAddedToCart: 0,
     Name: 'meal',
+    IsFavorite: false,
     Description: 'plate',
     Image: 'Images/ggg.png',
   ),
@@ -427,6 +472,7 @@ List<Productmodel> List4 = [
     availableQuantity: 5,
     Description: 'plaplapla',
     Image: 'Images/hhh.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 10,
@@ -436,6 +482,7 @@ List<Productmodel> List4 = [
     Description: 'plaplapla',
     availableQuantity: 5,
     Image: 'Images/ddd.png',
+    IsFavorite: false,
   ),
 ];
 /////5555
@@ -447,6 +494,7 @@ List<Productmodel> List5 = [
     QuantityAddedToCart: 0,
     Description: 'plaplapla',
     availableQuantity: 5,
+    IsFavorite: false,
     Image: 'Images/aaa.png',
   ),
   Productmodel(
@@ -457,6 +505,7 @@ List<Productmodel> List5 = [
     Image: 'Images/bbb.png',
     QuantityAddedToCart: 0,
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 3,
@@ -466,11 +515,13 @@ List<Productmodel> List5 = [
     QuantityAddedToCart: 0,
     Image: 'Images/ccc.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 5,
     Price: 40,
     Name: 'lemon',
+    IsFavorite: false,
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
@@ -484,10 +535,12 @@ List<Productmodel> List5 = [
     QuantityAddedToCart: 0,
     Image: 'Images/eee.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 7,
     Price: 500,
+    IsFavorite: false,
     Name: 'tomato',
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
@@ -500,6 +553,7 @@ List<Productmodel> List5 = [
     Name: 'meal',
     Description: 'plate',
     Image: 'Images/ggg.png',
+    IsFavorite: false,
     availableQuantity: 5,
     QuantityAddedToCart: 0,
   ),
@@ -510,6 +564,7 @@ List<Productmodel> List5 = [
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/hhh.png',
+    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -519,6 +574,7 @@ List<Productmodel> List5 = [
     Description: 'plaplapla',
     Image: 'Images/ddd.png',
     QuantityAddedToCart: 0,
+    IsFavorite: false,
     availableQuantity: 5,
   ),
 ];
@@ -531,6 +587,7 @@ List<Productmodel> List6 = [
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/aaa.png',
+    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -541,6 +598,7 @@ List<Productmodel> List6 = [
     QuantityAddedToCart: 0,
     Image: 'Images/bbb.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 3,
@@ -550,12 +608,14 @@ List<Productmodel> List6 = [
     QuantityAddedToCart: 0,
     Image: 'Images/ccc.png',
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 5,
     Price: 40,
     Name: 'lemon',
     QuantityAddedToCart: 0,
+    IsFavorite: false,
     Description: 'plaplapla',
     availableQuantity: 5,
     Image: 'Images/ddd.png',
@@ -568,6 +628,7 @@ List<Productmodel> List6 = [
     QuantityAddedToCart: 0,
     availableQuantity: 5,
     Image: 'Images/eee.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 7,
@@ -577,6 +638,7 @@ List<Productmodel> List6 = [
     availableQuantity: 5,
     QuantityAddedToCart: 0,
     Image: 'Images/fff.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 8,
@@ -585,6 +647,7 @@ List<Productmodel> List6 = [
     Description: 'plate',
     availableQuantity: 5,
     QuantityAddedToCart: 0,
+    IsFavorite: false,
     Image: 'Images/ggg.png',
   ),
   Productmodel(
@@ -595,6 +658,7 @@ List<Productmodel> List6 = [
     Image: 'Images/hhh.png',
     QuantityAddedToCart: 0,
     availableQuantity: 5,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 10,
@@ -604,6 +668,7 @@ List<Productmodel> List6 = [
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
+    IsFavorite: false,
   ),
 ];
 /////7777
@@ -616,6 +681,7 @@ List<Productmodel> List7 = [
     Image: 'Images/aaa.png',
     availableQuantity: 5,
     QuantityAddedToCart: 0,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 2,
@@ -623,6 +689,7 @@ List<Productmodel> List7 = [
     Name: 'onion',
     availableQuantity: 5,
     Description: 'plaplapla',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
     Image: 'Images/bbb.png',
   ),
@@ -633,6 +700,7 @@ List<Productmodel> List7 = [
     QuantityAddedToCart: 0,
     Name: 'juice',
     Description: 'plaplapla',
+    IsFavorite: false,
     Image: 'Images/ccc.png',
   ),
   Productmodel(
@@ -643,6 +711,7 @@ List<Productmodel> List7 = [
     QuantityAddedToCart: 0,
     availableQuantity: 5,
     Image: 'Images/ddd.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 6,
@@ -652,6 +721,7 @@ List<Productmodel> List7 = [
     availableQuantity: 5,
     QuantityAddedToCart: 0,
     Image: 'Images/eee.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 7,
@@ -661,6 +731,7 @@ List<Productmodel> List7 = [
     Description: 'plaplapla',
     availableQuantity: 5,
     Image: 'Images/fff.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 8,
@@ -670,6 +741,7 @@ List<Productmodel> List7 = [
     Description: 'plate',
     QuantityAddedToCart: 0,
     Image: 'Images/ggg.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 9,
@@ -678,6 +750,7 @@ List<Productmodel> List7 = [
     Description: 'plaplapla',
     availableQuantity: 5,
     Image: 'Images/hhh.png',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -686,6 +759,7 @@ List<Productmodel> List7 = [
     Name: 'meat',
     Description: 'plaplapla',
     availableQuantity: 5,
+    IsFavorite: false,
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
   ),
@@ -700,6 +774,7 @@ List<Productmodel> List8 = [
     QuantityAddedToCart: 0,
     availableQuantity: 5,
     Image: 'Images/aaa.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 2,
@@ -709,6 +784,7 @@ List<Productmodel> List8 = [
     availableQuantity: 5,
     Image: 'Images/bbb.png',
     QuantityAddedToCart: 0,
+    IsFavorite: false,
   ),
   Productmodel(
     id: 3,
@@ -718,6 +794,7 @@ List<Productmodel> List8 = [
     QuantityAddedToCart: 0,
     availableQuantity: 5,
     Image: 'Images/ccc.png',
+    IsFavorite: false,
   ),
   Productmodel(
     id: 5,
@@ -726,6 +803,7 @@ List<Productmodel> List8 = [
     Description: 'plaplapla',
     availableQuantity: 5,
     Image: 'Images/ddd.png',
+    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -735,6 +813,7 @@ List<Productmodel> List8 = [
     QuantityAddedToCart: 0,
     Description: 'plaplapla',
     availableQuantity: 5,
+    IsFavorite: false,
     Image: 'Images/eee.png',
   ),
   Productmodel(
@@ -744,6 +823,7 @@ List<Productmodel> List8 = [
     availableQuantity: 5,
     QuantityAddedToCart: 0,
     Description: 'plaplapla',
+    IsFavorite: false,
     Image: 'Images/fff.png',
   ),
   Productmodel(
@@ -751,6 +831,7 @@ List<Productmodel> List8 = [
     Price: 125,
     Name: 'meal',
     availableQuantity: 5,
+    IsFavorite: false,
     Description: 'plate',
     Image: 'Images/ggg.png',
     QuantityAddedToCart: 0,
@@ -762,6 +843,7 @@ List<Productmodel> List8 = [
     availableQuantity: 5,
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
+    IsFavorite: false,
     Image: 'Images/hhh.png',
   ),
   Productmodel(
@@ -770,6 +852,7 @@ List<Productmodel> List8 = [
     Name: 'meat',
     Description: 'plaplapla',
     availableQuantity: 5,
+    IsFavorite: false,
     Image: 'Images/ddd.png',
     QuantityAddedToCart: 0,
   ),
