@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, sized_box_for_whitespace, non_constant_identifier_names, use_key_in_widget_constructors, dead_code
 
 import 'package:flutter/material.dart';
+
 import 'package:stores/Models/product_model.dart';
 import 'package:stores/details_product/screens/details_screen.dart';
 import 'package:stores/pages/cart_page.dart';
@@ -105,6 +106,13 @@ class _ProductState extends State<Product_inCart> {
                                     });
                                   }, ///////////////////////////////////////
                                   icon: Icon(Icons.remove_shopping_cart),
+                                ),
+                                Text(
+                                  '${widget.productmodel!.Price}${String.fromCharCode(36)}',
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ],
                             ),

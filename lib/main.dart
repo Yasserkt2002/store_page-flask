@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors, unused_import, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:stores/Models/stroe_model.dart';
 import 'package:stores/pages/home_page.dart';
-import 'package:stores/pages/store_page.dart';
+
 
 void main() {
   runApp(const MyApp());

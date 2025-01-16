@@ -6,16 +6,15 @@ import 'package:stores/details_product/screens/details_screen.dart';
 import 'package:stores/pages/favorite_page.dart';
 import 'package:stores/pages/store_page.dart';
 
-
-class Product extends StatefulWidget {
-  const Product({Key? key, required this.productmodel});
+class Product_inPageStore extends StatefulWidget {
+  const Product_inPageStore({Key? key, required this.productmodel});
   final Productmodel? productmodel;
 
   @override
-  State<Product> createState() => _ProductState();
+  State<Product_inPageStore> createState() => Product_inPageStoreState();
 }
 
-class _ProductState extends State<Product> {
+class Product_inPageStoreState extends State<Product_inPageStore> {
   @override
   Widget build(BuildContext context) {
     final ProductCardHightSize = MediaQuery.of(context).size.height * 0.3;
@@ -107,20 +106,23 @@ class _ProductState extends State<Product> {
                                   child: IconButton(
                                       onPressed: () {
                                         setState(() {
-                                          if (colorFav == Colors.grey)
-                                            colorFav = Colors.red;
-                                          widget.productmodel!.IsFavorite =
-                                              true;
-                                          ListProducts_InFavorite.add(
-                                              widget.productmodel!);
+                                          if (widget.productmodel!.colorFav ==
+                                              Colors.grey) {
+                                            widget.productmodel!.colorFav =
+                                                Colors.red;
+                                            ListProducts_InFavorite.add(
+                                                widget.productmodel!);
+                                          } else {
+                                            widget.productmodel!.colorFav =
+                                                Colors.grey;
+                                            ListProducts_InFavorite.remove(
+                                                widget.productmodel!);
+                                          }
                                         });
                                       },
-                                      icon: Icon(
-                                        Icons.favorite,
-                                        color: widget.productmodel!.IsFavorite
-                                            ? Colors.red
-                                            : Colors.grey,
-                                      )),
+                                      icon: Icon(Icons.favorite,
+                                          color:
+                                              widget.productmodel!.colorFav)),
                                 )
                               ],
                             ),

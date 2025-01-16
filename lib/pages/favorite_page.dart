@@ -1,8 +1,7 @@
-// ignore_for_file: prefer_const_constructors, unused_import, must_be_immutable
+// ignore_for_file: prefer_const_constructors, unused_import, must_be_immutable, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:stores/Item_template/Product_Card.dart';
-import 'package:stores/Item_template/Product_Card_InCart.dart';
+
 import 'package:stores/Item_template/Product_Card_InFavorite.dart';
 import 'package:stores/Models/product_model.dart';
 
@@ -16,6 +15,8 @@ class favorite_page extends StatelessWidget {
   List<Productmodel> ListProducts_InFavorite;
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.of(context).size.height * 0.042;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -34,14 +35,14 @@ class favorite_page extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(5, 20, 5, 0),
+        padding: const EdgeInsets.fromLTRB(10, 20, 5, 0),
         child: GridView.builder(
           clipBehavior: Clip.none,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.9,
-            crossAxisSpacing: 1,
-            mainAxisSpacing: 6,
+            childAspectRatio: 0.8,
+            crossAxisSpacing: 20,
+            mainAxisSpacing: 20,
           ),
           itemCount: ListProducts_InFavorite.length,
           itemBuilder: (context, Index) {

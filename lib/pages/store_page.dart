@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:stores/Item_template/Product_Card.dart';
-import 'package:stores/Item_template/Stroe_Card.dart';
+
 import 'package:stores/Models/product_model.dart';
+import 'package:stores/details_product/models/product.dart';
 import 'package:stores/pages/cart_page.dart';
 import 'package:stores/pages/home_page.dart';
 
@@ -37,14 +38,16 @@ class StorePage extends StatelessWidget {
         ),
 
         actions: [
-          IconButton(onPressed: () {
-
-              Navigator.push(context, MaterialPageRoute(
-            builder: (context) {
-              return cart_page(ListProducts_InCart: ListProducts_InCart) ;/////////////
-            }, 
-          ));
-          }, icon: Icon(Icons.shopping_cart_sharp))
+          IconButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return cart_page(
+                        ListProducts_InCart: ListProducts_InCart); /////////////
+                  },
+                ));
+              },
+              icon: Icon(Icons.shopping_cart_sharp))
         ],
       ),
       body: Padding(
@@ -59,7 +62,7 @@ class StorePage extends StatelessWidget {
           ),
           itemCount: List1.length,
           itemBuilder: (context, Index) {
-            return Product(
+            return Product_inPageStore(
               productmodel: ListProducts[Index],
             );
           },
@@ -70,4 +73,3 @@ class StorePage extends StatelessWidget {
 }
 
 List<Productmodel> ListProducts_InCart = [];
-];

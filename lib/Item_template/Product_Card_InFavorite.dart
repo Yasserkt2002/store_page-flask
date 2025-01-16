@@ -1,24 +1,24 @@
 // ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures, sized_box_for_whitespace, non_constant_identifier_names, use_key_in_widget_constructors, dead_code, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:stores/Item_template/Product_Card.dart';
+
 import 'package:stores/Models/product_model.dart';
 import 'package:stores/details_product/screens/details_screen.dart';
-import 'package:stores/pages/cart_page.dart';
 import 'package:stores/pages/favorite_page.dart';
-import 'package:stores/pages/store_page.dart';
 
-Color? colorFav = Colors.red;
+
+import '../main.dart';
+import 'Product_Card_InCart.dart';
 
 class Product_inFavorite extends StatefulWidget {
   const Product_inFavorite({Key? key, required this.productmodel});
   final Productmodel? productmodel;
 
   @override
-  State<Product_inFavorite> createState() => _ProductState();
+  State<Product_inFavorite> createState() => ProductState();
 }
 
-class _ProductState extends State<Product_inFavorite> {
+class ProductState extends State<Product_inFavorite> {
   @override
   Widget build(BuildContext context) {
     final ProductCardHightSize = MediaQuery.of(context).size.height * 0.3;
@@ -102,13 +102,17 @@ class _ProductState extends State<Product_inFavorite> {
                                                 ListProducts_InFavorite:
                                                     ListProducts_InFavorite);
                                             /////////////
+                                            ///
                                           },
                                         )); //update page}
+                                        widget.productmodel!.colorFav =
+                                            Colors.grey;
                                       });
                                     },
                                     icon: Icon(
                                       Icons.favorite,
-                                      color: colorFav,
+                                      color: /*  ProductState. */
+                                          widget.productmodel!.colorFav,
                                     ))
                               ],
                             ),

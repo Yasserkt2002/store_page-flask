@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:stores/Models/stroe_model.dart';
-import 'package:stores/pages/home_page.dart';
 import 'package:stores/pages/store_page.dart';
+
 
 class StroeCard extends StatelessWidget {
   StroeCard({super.key, required this.stroeModel});
