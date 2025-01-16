@@ -3,15 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:stores/Item_template/Product_Card.dart';
 import 'package:stores/Item_template/Product_Card_InCart.dart';
-import 'package:stores/Item_template/Stroe_Card.dart';
 import 'package:stores/Models/product_model.dart';
-import 'package:stores/pages/home_page.dart';
 
 int? x;
 
 class cart_page extends StatelessWidget {
   cart_page({
-    
     super.key,
     required this.ListProducts_InCart,
     /* required this.ListProducts*/

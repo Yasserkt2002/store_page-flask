@@ -69,8 +69,5 @@ class StorePage extends StatelessWidget {
   }
 }
 
-List<Productmodel>ListProducts_InCart=[
-
-
-  
+List<Productmodel> ListProducts_InCart = [];
 ];

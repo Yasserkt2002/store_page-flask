@@ -6,8 +6,6 @@ import 'package:stores/details_product/screens/details_screen.dart';
 import 'package:stores/pages/cart_page.dart';
 import 'package:stores/pages/store_page.dart';
 
-Color? colorFav = Colors.grey;
-
 class Product_inCart extends StatefulWidget {
   const Product_inCart({Key? key, required this.productmodel});
   final Productmodel? productmodel;

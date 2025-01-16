@@ -6,7 +6,6 @@ import 'package:stores/details_product/screens/details_screen.dart';
 import 'package:stores/pages/favorite_page.dart';
 import 'package:stores/pages/store_page.dart';
 
-Color? colorFav = Colors.grey;
 
 class Product extends StatefulWidget {
   const Product({Key? key, required this.productmodel});
@@ -105,15 +104,6 @@ class _ProductState extends State<Product> {
                                   icon: Icon(Icons.add_shopping_cart_outlined),
                                 ),
                                 InkWell(
-                                  onLongPress: () {
-                                    setState(() {
-                                      if (colorFav == Colors.red)
-                                        colorFav = Colors.grey;
-                                      widget.productmodel!.IsFavorite = false;
-                                      ListProducts_InFavorite.remove(
-                                          widget.productmodel!);
-                                    });
-                                  },
                                   child: IconButton(
                                       onPressed: () {
                                         setState(() {
@@ -170,7 +160,6 @@ List<Productmodel> ProductsList = [
     Image: 'Images/aaa.png',
     availableQuantity: 5,
     QuantityAddedToCart: 0,
-    IsFavorite: false,
   ),
   Productmodel(
     id: 2,
@@ -178,7 +167,6 @@ List<Productmodel> ProductsList = [
     Name: 'onion',
     Description: 'plaplapla',
     availableQuantity: 5,
-    IsFavorite: false,
     Image: 'Images/bbb.png',
     QuantityAddedToCart: 0,
   ),
@@ -189,7 +177,6 @@ List<Productmodel> ProductsList = [
     Description: 'plaplapla',
     Image: 'Images/ccc.png',
     availableQuantity: 5,
-    IsFavorite: false,
     QuantityAddedToCart: 0,
   ),
   Productmodel(
@@ -200,7 +187,6 @@ List<Productmodel> ProductsList = [
     QuantityAddedToCart: 0,
     Image: 'Images/ddd.png',
     availableQuantity: 5,
-    IsFavorite: false,
   ),
   Productmodel(
     id: 6,
@@ -210,7 +196,6 @@ List<Productmodel> ProductsList = [
     Image: 'Images/eee.png',
     availableQuantity: 5,
     QuantityAddedToCart: 0,
-    IsFavorite: false,
   ),
   Productmodel(
     id: 7,
@@ -219,7 +204,6 @@ List<Productmodel> ProductsList = [
     Description: 'plaplapla',
     QuantityAddedToCart: 0,
     Image: 'Images/fff.png',
-    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -229,7 +213,6 @@ List<Productmodel> ProductsList = [
     Description: 'plate',
     Image: 'Images/ggg.png',
     QuantityAddedToCart: 0,
-    IsFavorite: false,
     availableQuantity: 5,
   ),
   Productmodel(
@@ -238,7 +221,6 @@ List<Productmodel> ProductsList = [
     Name: 'milk',
     Description: 'plaplapla',
     Image: 'Images/hhh.png',
-    IsFavorite: false,
     availableQuantity: 5,
     QuantityAddedToCart: 0,
   ),
@@ -248,7 +230,6 @@ List<Productmodel> ProductsList = [
     Name: 'meat',
     Description: 'plaplapla',
     Image: 'Images/ddd.png',
-    IsFavorite: false,
     QuantityAddedToCart: 0,
     availableQuantity: 5,
   ),

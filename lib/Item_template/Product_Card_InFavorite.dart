@@ -89,27 +89,6 @@ class _ProductState extends State<Product_inFavorite> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                /*  IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      widget
-                                          .productmodel!.QuantityAddedToCart--;
-                                      widget.productmodel!.availableQuantity++;
-                                      ListProducts_InCart.remove(
-                                          widget.productmodel!);
-                                      Navigator.pop(context);
-                                      Navigator.push(context, MaterialPageRoute(
-                                        builder: (context) {
-                                          return cart_page(
-                                              ListProducts_InCart:
-                                                  ListProducts_InCart);
-                                          /////////////
-                                        },
-                                      ));
-                                    });
-                                  }, ///////////////////////////////////////
-                                  icon: Icon(Icons.remove_shopping_cart),
-                                ),*/
                                 IconButton(
                                     onPressed: () {
                                       setState(() {

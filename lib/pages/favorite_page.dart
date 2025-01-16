@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:stores/Item_template/Product_Card.dart';
 import 'package:stores/Item_template/Product_Card_InCart.dart';
 import 'package:stores/Item_template/Product_Card_InFavorite.dart';
-import 'package:stores/Item_template/Stroe_Card.dart';
 import 'package:stores/Models/product_model.dart';
-import 'package:stores/pages/home_page.dart';
 
 int? x;
 
@@ -14,10 +12,8 @@ class favorite_page extends StatelessWidget {
   favorite_page({
     super.key,
     required this.ListProducts_InFavorite,
-    /* required this.ListProducts*/
   });
   List<Productmodel> ListProducts_InFavorite;
-  //List<Productmodel> ListProducts;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
